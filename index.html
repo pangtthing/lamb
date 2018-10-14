@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>제발 상자에 들어가줘 얘들아</title>
+	<style type="text/css">
+		body {background-color: #FFCC95}
+		
+		#lambDiv {width:1000px; height:600px; position: absolute;}
+
+		#lamb {width:100px; animation:drop 2s linear infinite;}
+		#lambStar {width:100px; animation:drop 2s linear infinite; top:300px;}
+		#lambHeart {width:100px; animation:drop 2s linear infinite;}
+
+		#boxDiv {width: 1000px; height:600px; position:absolute; top:0px}
+		#box {width:200px; position:absolute; top:300px; left:500px; cursor:pointer;}
+
+		@keyframes drop{
+			from {margin-left: 800px;}
+			to {margin-left: 0px;}
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id=lambDiv>
+		<img src="img/lamb.png" id="lamb">
+		<img src="img/lambStar.png" id="lambStar">
+		<img src="img/lambHeart.png" id="lambHeart">
+	</div>
+
+	<div id="boxDiv">
+		<img src="img/box.png" id="box">
+	</div>
+
+	<script type="text/javascript">
+
+		box.onclick = function(){
+				if(toggle == "off"){
+					lambDiv.style.width = "0px";
+					lambDiv.style.height = "0px";
+					lambDiv.style.animationPlayState = "running";
+
+					toggle = "on";
+				}
+			else {
+					lambDiv.style.width = "1000px";
+					lambDiv.style.height = "650px";
+					
+					toggle = "off";
+				}
+				}
+
+
+		for (var i = 0; i < 10; i++) {
+			var k = document.getElementById("lamb")
+			var newLamb = k.cloneNode(true);
+
+			newLamb.style.left = Math.random()*window.innerWeight + "px";
+			newLamb.style.top = Math.random()*window.innerHeight + "px";
+			newLamb.style.animationDuration = Math.random()*15 + "s";
+
+			document.body.appendChild(newLamb);
+		}
+
+		for (var i = 0; i < 10; i++) {
+			var k = document.getElementById("lambStar")
+			var newLamb = k.cloneNode(true);
+
+			newLambStar.style.left = Math.random()*window.innerWeight + "px";
+			newLambStar.style.top = Math.random()*window.innerHeight + "px";
+			newLambStar.style.animationDuration = Math.random()*15 + "s";
+
+			document.body.appendChild(newLambStar);
+		}
+
+
+	</script>
+</body>
+</html>
